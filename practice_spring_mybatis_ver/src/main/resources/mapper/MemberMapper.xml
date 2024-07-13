@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.suguri.practice_spring_mybatis_ver.repository.MemberRepository">
+    <select id="findAll" resultType="com.suguri.practice_spring_mybatis_ver.domain.Member">
+        select * from member;
+    </select>
+    <select id="findById" resultType="com.suguri.practice_spring_mybatis_ver.domain.Member" parameterType="Long">
+        select * from member where id=#{id};
+    </select>
+    <select id="save" resultType="com.suguri.practice_spring_mybatis_ver.domain.Member">
+        insert into member(name, email, password) values(#{name}, #{email}, #{password});
+    </select>
+</mapper>
